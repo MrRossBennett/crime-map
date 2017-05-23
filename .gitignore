@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Node
+/node_modules
+/npm-debug.log
+
+# Generated Files
+/public/_*
