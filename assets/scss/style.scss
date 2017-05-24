@@ -1,4 +1,8 @@
 @import "normalize";
-@import "base";
 
-@import "app";
+@import "base/base";
+@import "base/icons";
+
+@import "components/header";
+@import "components/footer";
+@import "components/map";

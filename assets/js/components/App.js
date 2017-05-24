@@ -12,7 +12,6 @@ class App extends Component {
           title="Crime Map 2017"
           intro="Locations of street level crimes that have taken place within a 1 mile radius of London's Oxford Street during the last month."
          />
-        <MapContainer />
         <Footer info="Powered by React.js" />
       </div>
     );

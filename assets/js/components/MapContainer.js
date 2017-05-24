@@ -33,7 +33,6 @@ class MapContainer extends Component {
 
       // Update the state with these markers
       this.setState({
-        loading: false,
         markers
       });
     });

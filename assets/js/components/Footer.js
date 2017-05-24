@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import iconStack from '../icons/logo';
+import IconReact from '../icons/Logo';
 
 const Footer = props => {
   const {
@@ -9,8 +9,8 @@ const Footer = props => {
 
   return (
     <footer className="crime-app-footer">
-    <iconStack />
-    <small>{info}</small>
+      <IconReact width="60" height="60" fill="#0E4F64" />
+      <small>{info}</small>
     </footer>
   )
 }
