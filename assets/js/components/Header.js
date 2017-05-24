@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Header = props => {
-  const {
-    title,
-    intro
-  } = props;
+  const {title, intro} = props;
 
   return (
     <header className="crime-app-header">

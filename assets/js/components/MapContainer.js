@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import Map from './Map.js';
-import { getCrimes } from '../utils/Get.js';
+import { getCrimes } from '../utils/api.js';
 
-class MapContainer extends Component {
+export default class MapContainer extends Component {
 
   constructor(props) {
     super(props);
@@ -21,20 +21,22 @@ class MapContainer extends Component {
         let crimeLat = parseFloat(item.location.latitude);
         let crimeLong = parseFloat(item.location.longitude);
 
-        // Transform list into a format expected by the react-google-maps component
         return {
           position: {
             lat: crimeLat,
             lng: crimeLong,
           },
+          showInfo: false,
+          infoContent: item.location.street.name,
           key: index
         };
       });
 
-      // Update the state with these markers
+      // Update the state with map markers
       this.setState({
         markers
       });
+
     });
 
     plotCrimes();
@@ -51,12 +53,10 @@ class MapContainer extends Component {
             <div style={{ height: '100%' }} />
           }
           markers={this.state.markers}
-          onMarkerClick={this.handleMarkerClick}
-          onMarkerClose={this.handleMarkerClose}
+          onMarkerClick={this.handleMarkerClick} // TO DO
+          onMarkerClose={this.handleMarkerClose} // TO DO
         />
       </div>
     );
   }
 }
-
-export default MapContainer;

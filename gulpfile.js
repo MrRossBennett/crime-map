@@ -83,7 +83,7 @@ function buildScript(file, watch) {
     // listen for an update and run rebundle
     bundler.on('update', function() {
         rebundle();
-        gutil.log('Rebundle...');
+        gutil.log('Rebundling...');
     });
 
     // run it once the first time buildScript is called

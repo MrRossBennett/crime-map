@@ -3,7 +3,7 @@ import { GoogleMap, Marker, withGoogleMap, InfoWindow } from 'react-google-maps'
 import IconReact from '../icons/Logo';
 import MapStyles from "../constants/mapStyles.json";
 
-// The Google Maps View
+// The Google Map View
 const Map = withGoogleMap((props) => {
   return (
     <div>
@@ -15,8 +15,8 @@ const Map = withGoogleMap((props) => {
         ref={props.onMapLoad}
         defaultZoom={16}
         defaultCenter={{
-          lat: 50.9998236,
-          lng: -3.0889258
+          lat: 53.9551714,
+          lng: -1.1006137
         }}
         defaultOptions={{
           styles: MapStyles,
@@ -24,10 +24,11 @@ const Map = withGoogleMap((props) => {
         }}
         onClick={props.onMapClick}
       >
-        {props.markers && props.markers.map(marker => (
+        {props.markers && props.markers.map((marker, index) => (
           <Marker
             {...marker}
-          />
+          >
+          </Marker>
         ))}
       </GoogleMap>
     </div>

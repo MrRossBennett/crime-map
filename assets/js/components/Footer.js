@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import IconReact from '../icons/Logo';
 
 const Footer = props => {
-  const {
-    info,
-  } = props;
+  const {info} = props;
 
   return (
     <footer className="crime-app-footer">

@@ -9,9 +9,11 @@ Gulp and Yarn need to be installed globally:
 ## Launch
 
 Install packages
-`yarn`
+
+`$ yarn`
 
 Launch project on http://localhost:3000/
-`gulp`
 
-Powered by [React](https://github.com/facebook/react)
+`$ gulp`
+
+Project powered by [React](https://github.com/facebook/react) and [data.police.uk](https://data.police.uk/docs/)
