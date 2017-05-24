@@ -1,0 +1,35 @@
+.crime-app-header {
+    color: #0E4F64;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.crime-app-intro {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    max-width: 800px;
+}
+
+.map-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.map-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.crime-app-footer {
+    text-align: center;
+    padding: 1rem;
+}

@@ -1,23 +1,32 @@
 import React, { Component } from 'react';
-import { GoogleMap, Marker, withGoogleMap } from 'react-google-maps';
-import MapStyles from "../MapStyles.json";
+import { GoogleMap, Marker, withGoogleMap, InfoWindow } from 'react-google-maps';
+import MapStyles from "../constants/mapStyles.json";
 
 // The Google Maps View
 const Map = withGoogleMap((props) => {
   return (
-    <GoogleMap
-      ref={props.onMapLoad}
-      defaultZoom={16}
-      defaultCenter={{ lat: 51.515419, lng: -0.141099 }}
-      defaultOptions={{ styles: MapStyles }}
-      onClick={props.onMapClick}
-    >
-      {props.markers && props.markers.map(marker => (
-        <Marker
-          {...marker}
-        />
-      ))}
-    </GoogleMap>
+    <div>
+      {!props &&
+        <LoaderComponent />
+      }
+      <GoogleMap
+        ref={props.onMapLoad}
+        defaultZoom={16}
+        defaultCenter={{ lat: 50.9998236, lng: -3.0889258 }}
+        defaultOptions={{
+          styles: MapStyles,
+          scrollwheel: false
+        }}
+        onClick={props.onMapClick}
+
+      >
+        {props.markers && props.markers.map(marker => (
+          <Marker
+            {...marker}
+          />
+        ))}
+      </GoogleMap>
+    </div>
   );
 });
 

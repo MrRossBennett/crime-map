@@ -12,13 +12,9 @@ var watchify           = require('watchify');
 var notify             = require('gulp-notify');
 var autoprefixer       = require('autoprefixer');
 var cssnano            = require('cssnano');
-var uglify             = require('gulp-uglify');
-var rename             = require('gulp-rename');
-var buffer             = require('vinyl-buffer');
 
 var browserSync        = require('browser-sync');
 var reload             = browserSync.reload;
-var historyApiFallback = require('connect-history-api-fallback');
 
 // Base Paths
 var basePaths = {
@@ -48,7 +44,6 @@ gulp.task('styles', function() {
 gulp.task('browser-sync', function() {
     browserSync({
         server : {},
-        middleware : [ historyApiFallback() ],
         ghostMode: false
     });
 });
@@ -95,14 +90,6 @@ function buildScript(file, watch) {
     return rebundle();
 }
 
-/*------------------------------------------*\
-     COPY IMAGES
-\*------------------------------------------*/
-gulp.task('images', function () {
-    return gulp.src(['!assets/img/svg/**', basePaths.src + 'img/**/*'])
-        .pipe(gulp.dest(basePaths.dest + '_img'))
-});
-
 /*-----------------------------------------*\
     DEFAULT TASKS
 \*-----------------------------------------*/
@@ -111,7 +98,7 @@ gulp.task('scripts', function() {
 });
 
 // run 'scripts' task first, then watch for future changes
-gulp.task('default', ['styles', 'scripts', 'images', 'browser-sync'], function() {
-    gulp.watch('assets/scss/**/*', ['styles']); // Gulp watch for stylus changes
+gulp.task('default', ['styles', 'scripts', 'browser-sync'], function() {
+    gulp.watch('assets/scss/**/*', ['styles']); // Gulp watch for style changes
     return buildScript('main.js', true); // Browserify watch for JS changes
 });
